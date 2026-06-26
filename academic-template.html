@@ -1,0 +1,2021 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="LearnWithNaofil Academic Templates Library - University circular formats, government notifications, college templates, Excel formats, student records and institutional documentation resources." />
+  <meta name="theme-color" content="#f5efe6" />
+  <title>Academic Templates | LearnWithNaofil</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <style>
+    :root {
+  --bg: #f5efe6;
+  --bg-2: #fffaf2;
+  --ink: #151515;
+  --ink-soft: #3b3b3b;
+  --muted: #6f6a61;
+  --paper: rgba(255, 255, 255, 0.74);
+  --paper-solid: #fffdf8;
+  --border: rgba(21, 21, 21, 0.10);
+  --border-strong: rgba(21, 21, 21, 0.18);
+  --gold: #b98239;
+  --gold-2: #e3bd7c;
+  --teal: #1f8a8a;
+  --blue: #2563eb;
+  --rose: #c96b5c;
+  --green: #188552;
+  --shadow: 0 26px 80px rgba(30, 24, 16, 0.12);
+  --shadow-soft: 0 16px 48px rgba(30, 24, 16, 0.08);
+  --radius: 28px;
+  --radius-sm: 18px;
+  --max: 1180px;
+  --nav-h: 78px;
+}
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: 'Inter', sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 0%, rgba(227, 189, 124, 0.22), transparent 34%),
+        radial-gradient(circle at 90% 12%, rgba(31, 138, 138, 0.12), transparent 32%),
+        linear-gradient(135deg, var(--bg), var(--bg-2));
+      overflow-x: hidden;
+    }
+
+    body.modal-open {
+      overflow: hidden;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    ::selection {
+      background: rgba(185, 130, 57, 0.25);
+    }
+
+    .container {
+      width: min(92%, var(--max));
+      margin-inline: auto;
+    }
+
+    .noise {
+      pointer-events: none;
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      opacity: 0.055;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    }
+
+    .cursor-glow {
+      pointer-events: none;
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 360px;
+      height: 360px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(185, 130, 57, 0.14), transparent 62%);
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    .progress-bar {
+      position: fixed;
+      inset: 0 auto auto 0;
+      height: 3px;
+      width: 0%;
+      z-index: 5000;
+      background: linear-gradient(90deg, var(--gold), var(--teal), var(--blue));
+    }
+
+    header,
+    main,
+    footer,
+    .brand-bar {
+      position: relative;
+      z-index: 3;
+    }
+
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-mark {
+      position: relative;
+      width: 48px;
+      height: 48px;
+      border-radius: 17px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: linear-gradient(135deg, var(--ink), #3a2b1f 54%, var(--gold));
+      box-shadow: 0 14px 30px rgba(21, 21, 21, 0.16);
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      overflow: hidden;
+    }
+
+    .logo-mark::after {
+      content: "";
+      position: absolute;
+      inset: -40% auto auto -40%;
+      width: 60%;
+      height: 160%;
+      background: rgba(255, 255, 255, 0.28);
+      transform: rotate(28deg);
+      animation: shine 6s ease-in-out infinite;
+    }
+
+    @keyframes shine {
+
+      0%,
+      55% {
+        transform: translateX(-120%) rotate(28deg);
+      }
+
+      75%,
+      100% {
+        transform: translateX(430%) rotate(28deg);
+      }
+    }
+
+    .logo-text strong {
+      display: block;
+      font-size: 1.02rem;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+    }
+
+    .logo-text span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 0.74rem;
+      font-weight: 600;
+    }
+
+
+
+    .surface {
+      position: relative;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--paper);
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      overflow: hidden;
+    }
+
+    .surface::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: radial-gradient(circle at var(--x, 50%) var(--y, 0%), rgba(185, 130, 57, 0.18), transparent 30%);
+      opacity: 0;
+      transition: opacity 0.24s ease;
+    }
+
+    .surface:hover::before {
+      opacity: 1;
+    }
+
+    .btn {
+      position: relative;
+      overflow: hidden;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 44px;
+      padding: 0 16px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      text-decoration: none;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      cursor: pointer;
+      transition: 0.28s ease;
+      white-space: nowrap;
+      font-size: 0.9rem;
+    }
+
+    .btn::after {
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.45);
+      transform: scale(0);
+      opacity: 0;
+    }
+
+    .btn.ripple::after {
+      animation: ripple 0.62s ease;
+    }
+
+    @keyframes ripple {
+      0% {
+        transform: scale(0);
+        opacity: 0.75;
+      }
+
+      100% {
+        transform: scale(18);
+        opacity: 0;
+      }
+    }
+
+    .btn-primary {
+      background: var(--ink);
+      color: #fff;
+      box-shadow: 0 14px 30px rgba(21, 21, 21, 0.16);
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, var(--ink), var(--gold));
+      transform: translateY(-3px);
+    }
+
+    .btn-outline {
+      color: var(--ink);
+      background: rgba(255, 255, 255, 0.54);
+      border-color: var(--border);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--gold);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .hero {
+      min-height: 74vh;
+      display: flex;
+      align-items: center;
+      padding: 132px 0 78px;
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+    }
+
+    .hero-blob {
+      position: absolute;
+      z-index: -1;
+      border-radius: 999px;
+      opacity: 0.88;
+      animation: floatBlob 9s ease-in-out infinite;
+    }
+
+    .hero-blob.one {
+      width: 330px;
+      height: 330px;
+      top: 13%;
+      right: 8%;
+      background: radial-gradient(circle, rgba(227, 189, 124, 0.34), transparent 68%);
+    }
+
+    .hero-blob.two {
+      width: 260px;
+      height: 260px;
+      bottom: 8%;
+      left: 4%;
+      background: radial-gradient(circle, rgba(31, 138, 138, 0.20), transparent 66%);
+      animation-delay: -4s;
+    }
+
+    @keyframes floatBlob {
+
+      0%,
+      100% {
+        transform: translate3d(0, 0, 0) scale(1);
+      }
+
+      50% {
+        transform: translate3d(12px, -20px, 0) scale(1.07);
+      }
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.07fr) minmax(320px, 0.93fr);
+      gap: 44px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 22px;
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.58);
+      color: var(--ink-soft);
+      font-weight: 800;
+      font-size: 0.88rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .eyebrow i {
+      color: var(--gold);
+    }
+
+    h1 {
+      max-width: 830px;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 7.1vw, 6.25rem);
+      line-height: 0.92;
+      letter-spacing: -0.075em;
+    }
+
+    h1 .soft {
+      color: var(--muted);
+      font-style: italic;
+      font-weight: 700;
+    }
+
+    .hero-desc {
+      max-width: 730px;
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.85;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 32px;
+    }
+
+    .dashboard {
+      padding: 22px;
+      border-radius: 36px;
+      background:
+        radial-gradient(circle at 20% 10%, rgba(227, 189, 124, 0.20), transparent 34%),
+        rgba(255, 255, 255, 0.50);
+      box-shadow: var(--shadow);
+    }
+
+    .dashboard-inner {
+      min-height: 430px;
+      padding: 24px;
+      border-radius: 28px;
+      color: #fff;
+      background:
+        radial-gradient(circle at 85% 16%, rgba(227, 189, 124, 0.38), transparent 30%),
+        radial-gradient(circle at 10% 90%, rgba(31, 138, 138, 0.28), transparent 30%),
+        linear-gradient(160deg, #1b1b1b, #2b2017 54%, #8a6230);
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .dashboard-inner::before {
+      content: "";
+      position: absolute;
+      inset: auto -80px -80px auto;
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      border: 1px dashed rgba(255, 255, 255, 0.18);
+      animation: rotate 18s linear infinite;
+      z-index: -1;
+    }
+
+    @keyframes rotate {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .dash-pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .dash-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 11px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    .dash-title {
+      margin-top: 46px;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.35rem;
+      line-height: 1;
+      letter-spacing: -0.05em;
+    }
+
+    .dash-sub {
+      max-width: 420px;
+      margin-top: 12px;
+      color: rgba(255, 255, 255, 0.74);
+      line-height: 1.65;
+    }
+
+    .mini-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .mini-stat {
+      padding: 16px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.10);
+      border: 1px solid rgba(255, 255, 255, 0.13);
+    }
+
+    .mini-stat strong {
+      display: block;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.55rem;
+      line-height: 1;
+    }
+
+    .mini-stat span {
+      display: block;
+      margin-top: 8px;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 0.78rem;
+      font-weight: 800;
+      line-height: 1.35;
+    }
+
+    .quote-strip {
+      margin-top: 18px;
+      padding: 14px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.10);
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      color: rgba(255, 255, 255, 0.78);
+      line-height: 1.5;
+      font-size: 0.88rem;
+    }
+
+    .templates-section {
+      padding: 92px 0;
+    }
+
+    .section-head {
+      max-width: 800px;
+      margin: 0 auto 42px;
+      text-align: center;
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 14px;
+      padding: 8px 13px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.52);
+      color: var(--gold);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+    }
+
+    .kicker::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 0 5px rgba(185, 130, 57, 0.13);
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.05rem, 4.5vw, 3.75rem);
+      line-height: 1.04;
+      letter-spacing: -0.04em;
+    }
+
+    .text-gradient {
+      background: linear-gradient(90deg, var(--gold), var(--teal));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .section-subtitle {
+      margin: 16px auto 0;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    .toolbar {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-height: 54px;
+      padding: 0 18px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.58);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .search-box i {
+      color: var(--gold);
+    }
+
+    .search-box input {
+      width: 100%;
+      border: 0;
+      outline: 0;
+      background: transparent;
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .search-box input::placeholder {
+      color: rgba(111, 106, 97, 0.78);
+    }
+
+    .chips {
+      display: flex;
+      gap: 9px;
+      flex-wrap: wrap;
+    }
+
+    .chip {
+      min-height: 40px;
+      padding: 0 13px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.58);
+      color: var(--ink-soft);
+      font-weight: 900;
+      cursor: pointer;
+      transition: 0.24s ease;
+      font-size: 0.86rem;
+    }
+
+    .chip:hover,
+    .chip.active {
+      color: #fff;
+      border-color: var(--ink);
+      background: var(--ink);
+    }
+
+    .category-block {
+      margin-top: 34px;
+    }
+
+    .block-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .block-title h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.65rem, 3vw, 2.35rem);
+      letter-spacing: -0.045em;
+      line-height: 1;
+    }
+
+    .block-title p {
+      color: var(--muted);
+      line-height: 1.6;
+      max-width: 560px;
+      font-size: 0.94rem;
+    }
+
+    .templates-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    .template-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 292px;
+      padding: 19px;
+      border-radius: 24px;
+      transition: 0.32s ease;
+    }
+
+    .template-card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(185, 130, 57, 0.28);
+      box-shadow: var(--shadow);
+    }
+
+    .template-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .template-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 17px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: linear-gradient(135deg, var(--ink), var(--gold));
+      box-shadow: 0 14px 26px rgba(21, 21, 21, 0.12);
+      font-size: 1.04rem;
+    }
+
+    .type-badge {
+      padding: 7px 9px;
+      border-radius: 999px;
+      background: rgba(185, 130, 57, 0.10);
+      color: #8a5b20;
+      border: 1px solid rgba(185, 130, 57, 0.14);
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .template-card h4 {
+      margin-top: 18px;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.36rem;
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+    }
+
+    .template-card p {
+      margin-top: 9px;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 0.88rem;
+    }
+
+    .mini-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 14px;
+    }
+
+    .mini-tags span {
+      padding: 6px 8px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.58);
+      border: 1px solid var(--border);
+      color: var(--ink-soft);
+      font-size: 0.68rem;
+      font-weight: 800;
+    }
+
+    .template-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 9px;
+      margin-top: auto;
+      padding-top: 16px;
+    }
+
+    .template-actions .btn {
+      min-height: 40px;
+      padding-inline: 10px;
+      font-size: 0.82rem;
+    }
+
+    .kit-panel {
+      margin-top: 46px;
+      padding: 30px;
+      color: #fff;
+      border-radius: 34px;
+      background:
+        radial-gradient(circle at 12% 10%, rgba(227, 189, 124, 0.38), transparent 32%),
+        radial-gradient(circle at 90% 75%, rgba(31, 138, 138, 0.32), transparent 32%),
+        linear-gradient(135deg, #141414, #2a2118);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .kit-panel h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4.3vw, 3.6rem);
+      line-height: 1;
+      letter-spacing: -0.06em;
+      max-width: 780px;
+    }
+
+    .kit-panel p {
+      max-width: 760px;
+      margin-top: 16px;
+      color: rgba(255, 255, 255, 0.76);
+      line-height: 1.75;
+    }
+
+    .kit-steps {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .kit-step {
+      min-height: 130px;
+      padding: 15px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.10);
+      border: 1px solid rgba(255, 255, 255, 0.13);
+    }
+
+    .kit-step strong {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      background: rgba(255, 255, 255, 0.15);
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .kit-step span {
+      display: block;
+      margin-top: 15px;
+      color: rgba(255, 255, 255, 0.86);
+      font-size: 0.86rem;
+      font-weight: 900;
+      line-height: 1.35;
+    }
+
+    .empty-state {
+      display: none;
+      padding: 32px;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .empty-state.show {
+      display: block;
+    }
+
+    .empty-state i {
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 14px;
+      border-radius: 20px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--ink), var(--gold));
+    }
+
+    .empty-state h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      letter-spacing: -0.04em;
+    }
+
+    .empty-state p {
+      margin-top: 8px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 6000;
+      display: grid;
+      place-items: center;
+      padding: 18px;
+      background: rgba(17, 24, 39, 0.42);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      opacity: 0;
+      pointer-events: none;
+      transition: 0.24s ease;
+    }
+
+    .modal.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-card {
+      width: min(890px, 100%);
+      max-height: min(86vh, 760px);
+      overflow: auto;
+      border-radius: 34px;
+      background:
+        radial-gradient(circle at 10% 0%, rgba(227, 189, 124, 0.20), transparent 34%),
+        var(--paper-solid);
+      border: 1px solid rgba(255, 255, 255, 0.55);
+      box-shadow: 0 30px 90px rgba(0, 0, 0, 0.28);
+      transform: translateY(18px) scale(0.98);
+      transition: 0.24s ease;
+    }
+
+    .modal.show .modal-card {
+      transform: translateY(0) scale(1);
+    }
+
+    .modal-head {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 22px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(255, 253, 248, 0.84);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .modal-head h3 {
+      margin-top: 2px;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.95rem;
+      letter-spacing: -0.05em;
+      line-height: 1;
+    }
+
+    .close-modal {
+      flex: 0 0 auto;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.64);
+      color: var(--ink);
+      cursor: pointer;
+      transition: 0.22s ease;
+    }
+
+    .close-modal:hover {
+      background: var(--ink);
+      color: #fff;
+    }
+
+    .modal-body {
+      padding: 24px;
+    }
+
+    .preview-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 18px;
+    }
+
+    .preview-panel {
+      padding: 21px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.56);
+      border: 1px solid var(--border);
+    }
+
+    .preview-panel h4 {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
+
+    .preview-panel h4 i {
+      color: var(--gold);
+    }
+
+    .preview-panel p,
+    .preview-panel li {
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    .preview-panel ul {
+      display: grid;
+      gap: 9px;
+      padding-left: 18px;
+    }
+
+    .preview-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .file-preview {
+      min-height: 260px;
+      border-radius: 20px;
+      border: 1px dashed rgba(185, 130, 57, 0.28);
+      background:
+        radial-gradient(circle at 15% 0%, rgba(227, 189, 124, 0.22), transparent 34%),
+        rgba(255, 255, 255, 0.52);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .file-preview i {
+      width: 64px;
+      height: 64px;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 14px;
+      border-radius: 24px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--ink), var(--gold));
+      font-size: 1.5rem;
+    }
+
+    .file-preview strong {
+      display: block;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.12rem;
+    }
+
+    .file-preview span {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      line-height: 1.5;
+      font-size: 0.9rem;
+    }
+
+    .footer-text {
+      padding: 30px 0 38px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: 0.78s cubic-bezier(.2, .8, .2, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal.delay-1 {
+      transition-delay: 0.08s;
+    }
+
+    .reveal.delay-2 {
+      transition-delay: 0.16s;
+    }
+
+    .reveal.delay-3 {
+      transition-delay: 0.24s;
+    }
+
+    @media(max-width:1120px) {
+      .templates-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .kit-steps {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media(max-width:980px) {
+
+      .hero-grid,
+      .preview-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .dashboard {
+        max-width: 650px;
+        margin-inline: auto;
+      }
+
+      .toolbar {
+        grid-template-columns: 1fr;
+      }
+
+      .block-title {
+        display: block;
+      }
+
+      .block-title p {
+        margin-top: 10px;
+      }
+    }
+
+/* ===== CLEAN FINAL NAVBAR FIX ===== */
+
+
+body.menu-open {
+  overflow: hidden;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3000;
+  border-bottom: 1px solid transparent;
+  transition: 0.28s ease;
+}
+
+.navbar.scrolled,
+#brandBar.scrolled {
+  background: rgba(255, 250, 242, 0.82);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom-color: var(--border);
+  box-shadow: 0 12px 32px rgba(30, 24, 16, 0.07);
+}
+
+.nav-content {
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.logo-text strong {
+  display: block;
+  color: var(--ink);
+  font-size: 1.02rem;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.logo-text span {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 0.74rem;
+  font-weight: 600;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  list-style: none;
+  padding: 6px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.48);
+  box-shadow: 0 12px 36px rgba(30, 24, 16, 0.05);
+}
+
+.nav-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 38px;
+  padding: 0 13px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  font-weight: 700;
+  transition: 0.22s ease;
+  white-space: nowrap;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #fff;
+  background: var(--ink);
+}
+
+.nav-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 44px;
+  padding: 0 16px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+  box-shadow: 0 16px 34px rgba(21, 21, 21, 0.16);
+  transition: 0.25s ease;
+  white-space: nowrap;
+}
+
+.nav-action:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, var(--ink), var(--gold));
+}
+
+.menu-toggle {
+  display: none;
+  width: 46px;
+  height: 46px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.56);
+  color: var(--ink);
+  cursor: pointer;
+  font-size: 1.12rem;
+}
+
+@media(max-width:980px) {
+  .menu-toggle {
+    display: grid;
+    place-items: center;
+  }
+
+  .nav-action {
+    display: none;
+  }
+
+  .nav-links {
+    position: fixed;
+    inset: 78px 0 auto 0;
+    min-height: calc(100vh - 78px);
+    border-radius: 0;
+    border-inline: 0;
+    border-bottom: 0;
+    background: rgba(255, 250, 242, 0.97);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow: none;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    transform: translateX(100%);
+    transition: 0.3s ease;
+  }
+
+  .nav-links.open {
+    transform: translateX(0);
+  }
+
+  .nav-links a {
+    height: 54px;
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.62);
+  }
+}
+@media(max-width:760px) {
+  .templates-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+
+  .templates-section {
+    padding: 76px 0;
+  }
+
+  .mini-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .kit-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(max-width:560px) {
+  .hero {
+    padding-top: 118px;
+  }
+
+  h1 {
+    font-size: clamp(3rem, 16vw, 4.18rem);
+  }
+
+  .templates-grid,
+  .kit-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-buttons .btn,
+  .template-actions,
+  .preview-actions .btn {
+    width: 100%;
+  }
+
+  .template-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard,
+  .dashboard-inner,
+  .kit-panel,
+  .modal-card {
+    border-radius: 24px;
+  }
+
+  .dashboard,
+  .dashboard-inner,
+  .kit-panel,
+  .template-card {
+    padding: 20px;
+  }
+
+  .modal-head {
+    padding: 18px;
+  }
+
+  .modal-body {
+    padding: 18px;
+  }
+}
+
+@media(prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+  </style>
+</head>
+
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+  <div class="progress-bar" id="progressBar" aria-hidden="true"></div>
+
+ <nav class="navbar" id="brandBar" aria-label="Main navigation">
+  <div class="container nav-content">
+    <a href="index.html#home" class="logo-area" aria-label="LearnWithNaofil Home">
+      <div class="logo-mark">LN</div>
+      <div class="logo-text">
+        <strong>LearnWithNaofil</strong>
+        <span>IT Educator • Digital Mentor</span>
+      </div>
+    </a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="notes.html">Notes</a></li>
+      <li><a href="academic-template.html" class="active">Templates</a></li>
+      <li><a href="utility-software.html">Software</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+
+    <a href="index.html#contact" class="nav-action">
+      <i class="fa-solid fa-paper-plane"></i> Connect
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+</nav>
+  <header class="hero">
+    <span class="hero-blob one" aria-hidden="true"></span>
+    <span class="hero-blob two" aria-hidden="true"></span>
+
+    <div class="container hero-grid">
+      <div class="reveal">
+        <div class="eyebrow">
+          <i class="fa-solid fa-sparkles"></i>
+          Academic Documentation Hub
+        </div>
+
+        <h1>Institution files made <span class="soft">organized</span> and ready.</h1>
+
+        <p class="hero-desc">
+          A premium academic template library for circulars, notifications, college formats, Excel records, applications
+          and institutional documentation. Every resource can be connected with PDF, image or Excel files for view and
+          download.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#templates" class="btn btn-primary">
+            <i class="fa-solid fa-folder-tree"></i>
+            Explore Templates
+          </a>
+
+          <a href="#starterKit" class="btn btn-outline">
+            <i class="fa-solid fa-list-check"></i>
+            Starter Kit
+          </a>
+        </div>
+      </div>
+
+      <aside class="dashboard surface reveal delay-1" aria-label="Academic templates dashboard">
+        <div class="dashboard-inner">
+          <div class="dash-pills">
+            <span class="dash-pill"><i class="fa-solid fa-building-columns"></i> Institution Ready</span>
+            <span class="dash-pill"><i class="fa-solid fa-file-arrow-down"></i> View + Download</span>
+          </div>
+
+          <h2 class="dash-title">Your academic file room, redesigned.</h2>
+
+          <p class="dash-sub">
+            Keep important circulars, applications and Excel formats in one beautiful searchable system.
+          </p>
+
+          <div class="mini-stats">
+            <div class="mini-stat">
+              <strong>11</strong>
+              <span>Resource Cards</span>
+            </div>
+            <div class="mini-stat">
+              <strong>03</strong>
+              <span>File Types</span>
+            </div>
+            <div class="mini-stat">
+              <strong>01</strong>
+              <span>Smart Library</span>
+            </div>
+          </div>
+
+          <div class="quote-strip">
+            Unique feature: students and staff can filter by circular, Excel, application and fee formats instead of
+            searching folders manually.
+          </div>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <main>
+    <section class="templates-section" id="templates">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="kicker">Template Library</div>
+          <h2 class="section-title">Circulars, Excel formats and applications in <span class="text-gradient">compact
+              premium cards.</span></h2>
+          <p class="section-subtitle">
+            This page is arranged in smaller cards so large academic resources stay clean, fast and easy to scan.
+          </p>
+        </div>
+
+        <div class="toolbar reveal">
+          <label class="search-box" for="templateSearch">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="search" id="templateSearch"
+              placeholder="Search circular, Excel, application, fee, LC, bonafide..." autocomplete="off" />
+          </label>
+
+          <div class="chips" aria-label="Filter templates">
+            <button class="chip active" data-filter="all">All</button>
+            <button class="chip" data-filter="circular">Circulars</button>
+            <button class="chip" data-filter="notification">Notifications</button>
+            <button class="chip" data-filter="excel">Excel</button>
+            <button class="chip" data-filter="application">Applications</button>
+            <button class="chip" data-filter="finance">Fees</button>
+          </div>
+        </div>
+
+        <div class="category-block reveal">
+          <div class="block-title">
+            <h3>Official Circulars & Notifications</h3>
+            <p>Keep reference formats and official documentation categories in a structured resource library.</p>
+          </div>
+
+          <div class="templates-grid">
+            <article class="surface template-card" data-category="circular"
+              data-keywords="university of mumbai circular formats mu circular pdf image official academic ordinance exam admission">
+              <div class="template-top">
+                <div class="template-icon"><i class="fa-solid fa-building-columns"></i></div>
+                <span class="type-badge">PDF / Image</span>
+              </div>
+              <h4>University of Mumbai Circular Formats</h4>
+              <p>Important MU circular format references for admissions, exams, eligibility and academic communication.
+              </p>
+              <div class="mini-tags"><span>MU</span><span>Circular</span><span>Official</span></div>
+              <div class="template-actions">
+                <button class="btn btn-primary" onclick="openPreview('muCircular')"><i class="fa-solid fa-eye"></i>
+                  View</button>
+                <a class="btn btn-outline" href="assets/templates/university-of-mumbai-circular-formats.pdf" download><i
+                    class="fa-solid fa-download"></i> Download</a>
+              </div>
+            </article>
+
+            <article class="surface template-card" data-category="notification"
+              data-keywords="hted higher technical education department notification government maharashtra education notification pdf image">
+              <div class="template-top">
+                <div class="template-icon"><i class="fa-solid fa-landmark"></i></div>
+                <span class="type-badge">PDF / Image</span>
+              </div>
+              <h4>HTED Notification</h4>
+              <p>Higher Technical Education Department notification references for institutional academic records.</p>
+              <div class="mini-tags"><span>HTED</span><span>Govt</span><span>Notice</span></div>
+              <div class="template-actions">
+                <button class="btn btn-primary" onclick="openPreview('hted')"><i class="fa-solid fa-eye"></i>
+                  View</button>
+                <a class="btn btn-outline" href="assets/templates/hted-notification.pdf" download><i
+                    class="fa-solid fa-download"></i> Download</a>
+              </div>
+            </article>
+
+            <article class="surface template-card" data-category="circular"
+              data-keywords="maharashtra state board circular private institution school junior college circular notification pdf image">
+              <div class="template-top">
+                <div class="template-icon"><i class="fa-solid fa-school"></i></div>
+                <span class="type-badge">PDF / Image</span>
+              </div>
+              <h4>Maharashtra State Board Circulars</h4>
+              <p>Circular references for private institutions, schools, junior colleges and board-related documentation.
+              </p>
+              <div class="mini-tags"><span>Board</span><span>Private</span><span>Institution</span></div>
+              <div class="template-actions">
+                <button class="btn btn-primary" onclick="openPreview('stateBoard')"><i class="fa-solid fa-eye"></i>
+                  View</button>
+                <a class="btn btn-outline"
+                  href="assets/templates/maharashtra-state-board-circular-private-institution.pdf" download><i
+                    class="fa-solid fa-download"></i> Download</a>
+              </div>
+            </article>
+
+            <article class="surface template-card" data-category="circular"
+              data-keywords="self finance course circular unaided course sf course university circular fees approval academic permission pdf">
+              <div class="template-top">
+                <div class="template-icon"><i class="fa-solid fa-file-circle-check"></i></div>
+                <span class="type-badge">PDF / Image</span>
+              </div>
+              <h4>Self Finance Course Circular</h4>
+              <p>References for self-financed course documentation, approvals, permissions and academic notices.</p>
+              <div class="mini-tags"><span>SFC</span><span>Course</span><span>Approval</span></div>
+              <div class="template-actions">
+                <button class="btn btn-primary" onclick="openPreview('sfc')"><i class="fa-solid fa-eye"></i>
+                  View</button>
+                <a class="btn btn-outline" href="assets/templates/self-finance-course-circular.pdf" download><i
+                    class="fa-solid fa-download"></i> Download</a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="category-block reveal delay-1">
+          <div class="block-title">
+            <h3>College Templates & Excel Records</h3>
+            <p>Ready-to-organize files for notices, records, student details, inward/outward registers and applications.
+            </p>
+          </div>
+
+          <div class="templates-grid">
+            <article class="surface template-card" data-category="application"
+              data-keywords="notice templates holiday notice admission notice exam notice circular college students staff">
+              <div class="template-top">
+                <div class="template-icon"><i class="fa-solid fa-bullhorn"></i></div>
+                <span class="type-badge">PDF / Image</span>
+              </div>
+              <h4>Notice Templates</h4>
+              <p>Formal college notices for holidays, admissions, exams, document submission and student instructions.
+              </p>
+              <div class="mini-tags"><span>Notice</span><span>Students</span><span>Staff</span></div>
+              <div class="template-actions">
+                <button class="btn btn-primary" onclick="openPreview('notice')"><i class="fa-solid fa-eye"></i>
+                  View</button>
+                <a class="btn btn-outline" href="assets/templates/notice-templates.pdf" download><i
+                    class="fa-solid fa-download"></i> Download</a>
+              </div>
+            </article>
+
+            <article class="surface template-card" data-category="excel"
+              data-keywords="college level excel dashboard academic excel result fees admission report college record xlsx">
+              <div class="template-top">
+                <div class="template-icon"><i class="fa-solid fa-table-cells-large"></i></div>
+                <span class="type-badge">Excel / PDF</span>
+              </div>
+              <h4>College Level Excel</h4>
+              <p>General academic Excel formats for college records, department work, reports and management data.</p>
+              <div class="mini-tags"><span>Excel</span><span>Reports</span><span>Admin</span></div>
+              <div class="template-actions">
+                <button class="btn btn-primary" onclick="openPreview('collegeExcel')"><i class="fa-solid fa-eye"></i>
+                  View</button>
+                <a class="btn btn-outline" href="assets/templates/college-level-excel.xlsx" download><i
+                    class="fa-solid fa-download"></i> Download</a>
+              </div>
+            </article>
+
+            <article class="surface template-card" data-category="excel"
+              data-keywords="students details excel must present in institution admission student record caste category documents mobile number parent details xlsx">
+              <div class="template-top">
+                <div class="template-icon"><i class="fa-solid fa-address-card"></i></div>
+                <span class="type-badge">Excel</span>
+              </div>
+              <h4>Student Details Excel</h4>
+              <p>Must-have institutional student record format for admissions, documents, contacts and category details.
+              </p>
+              <div class="mini-tags"><span>Student</span><span>Record</span><span>Must-Have</span></div>
+              <div class="template-actions">
+                <button class="btn btn-primary" onclick="openPreview('studentExcel')"><i class="fa-solid fa-eye"></i>
+                  View</button>
+                <a class="btn btn-outline" href="assets/templates/student-details-excel.xlsx" download><i
+                    class="fa-solid fa-download"></i> Download</a>
+              </div>
+            </article>
+
+            <article class="surface template-card" data-category="excel"
+              data-keywords="inward outward excel register letter received dispatch correspondence office record xlsx">
+              <div class="template-top">
+                <div class="template-icon"><i class="fa-solid fa-right-left"></i></div>
+                <span class="type-badge">Excel</span>
+              </div>
+              <h4>Inward / Outward Excel</h4>
+              <p>Office register format for received letters, outgoing documents, dispatch records and reference
+                numbers.</p>
+              <div class="mini-tags"><span>Register</span><span>Office</span><span>Dispatch</span></div>
+              <div class="template-actions">
+                <button class="btn btn-primary" onclick="openPreview('inwardOutward')"><i class="fa-solid fa-eye"></i>
+                  View</button>
+                <a class="btn btn-outline" href="assets/templates/inward-outward-register.xlsx" download><i
+                    class="fa-solid fa-download"></i> Download</a>
+              </div>
+            </article>
+
+            <article class="surface template-card" data-category="application"
+              data-keywords="lc application leaving certificate transfer certificate application student request format">
+              <div class="template-top">
+                <div class="template-icon"><i class="fa-solid fa-file-signature"></i></div>
+                <span class="type-badge">PDF / Image</span>
+              </div>
+              <h4>LC Application Templates</h4>
+              <p>Leaving Certificate and Transfer Certificate application formats for students and office records.</p>
+              <div class="mini-tags"><span>LC</span><span>TC</span><span>Application</span></div>
+              <div class="template-actions">
+                <button class="btn btn-primary" onclick="openPreview('lc')"><i class="fa-solid fa-eye"></i>
+                  View</button>
+                <a class="btn btn-outline" href="assets/templates/lc-application-templates.pdf" download><i
+                    class="fa-solid fa-download"></i> Download</a>
+              </div>
+            </article>
+
+            <article class="surface template-card" data-category="application"
+              data-keywords="bonafide application certificate student request format college bonafide letter">
+              <div class="template-top">
+                <div class="template-icon"><i class="fa-solid fa-id-badge"></i></div>
+                <span class="type-badge">PDF / Image</span>
+              </div>
+              <h4>Bonafide Application Templates</h4>
+              <p>Bonafide certificate request formats for students, scholarships, travel, bank and academic purposes.
+              </p>
+              <div class="mini-tags"><span>Bonafide</span><span>Certificate</span><span>Request</span></div>
+              <div class="template-actions">
+                <button class="btn btn-primary" onclick="openPreview('bonafide')"><i class="fa-solid fa-eye"></i>
+                  View</button>
+                <a class="btn btn-outline" href="assets/templates/bonafide-application-templates.pdf" download><i
+                    class="fa-solid fa-download"></i> Download</a>
+              </div>
+            </article>
+
+            <article class="surface template-card" data-category="finance"
+              data-keywords="fee structure templates college fees course wise semester wise tuition exam eligibility admission fee pdf excel">
+              <div class="template-top">
+                <div class="template-icon"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+                <span class="type-badge">PDF / Excel</span>
+              </div>
+              <h4>Fee Structure Templates</h4>
+              <p>Course-wise and semester-wise fee structure format for admission desk, notices and management records.
+              </p>
+              <div class="mini-tags"><span>Fees</span><span>Admission</span><span>Finance</span></div>
+              <div class="template-actions">
+                <button class="btn btn-primary" onclick="openPreview('fees')"><i class="fa-solid fa-eye"></i>
+                  View</button>
+                <a class="btn btn-outline" href="assets/templates/fee-structure-templates.xlsx" download><i
+                    class="fa-solid fa-download"></i> Download</a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="surface empty-state" id="emptyState">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <h3>No template found</h3>
+          <p>Try searching with “LC”, “Bonafide”, “Excel”, “Circular”, “Fee”, “Student Details” or reset the filter to
+            All.</p>
+        </div>
+
+        <div class="kit-panel reveal delay-2" id="starterKit">
+          <h3>Institution Starter Kit: what to keep ready first.</h3>
+          <p>
+            This section attracts users because it gives a practical order. Instead of uploading random files, arrange
+            templates in this sequence for a useful academic documentation system.
+          </p>
+
+          <div class="kit-steps">
+            <div class="kit-step"><strong>01</strong><span>Student Details Master Excel</span></div>
+            <div class="kit-step"><strong>02</strong><span>Notice & Application Templates</span></div>
+            <div class="kit-step"><strong>03</strong><span>Inward / Outward Register</span></div>
+            <div class="kit-step"><strong>04</strong><span>Fee Structure Records</span></div>
+            <div class="kit-step"><strong>05</strong><span>University & Govt Circular Folder</span></div>
+          </div>
+        </div>
+
+        <p class="footer-text">
+          © <span id="year"></span> LearnWithNaofil — Academic Templates Library
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal" id="previewModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <div class="modal-head">
+        <div>
+          <div class="kicker" id="modalKicker">Template Preview</div>
+          <h3 id="modalTitle">Academic Template</h3>
+        </div>
+        <button class="close-modal" type="button" onclick="closePreview()" aria-label="Close preview">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div class="preview-grid">
+          <div class="preview-panel">
+            <h4><i class="fa-solid fa-circle-info"></i> About this resource</h4>
+            <p id="modalDescription"></p>
+
+            <div class="preview-actions">
+              <a class="btn btn-primary" id="modalViewLink" target="_blank" rel="noopener">
+                <i class="fa-solid fa-up-right-from-square"></i> Open File
+              </a>
+              <a class="btn btn-outline" id="modalDownloadLink" download>
+                <i class="fa-solid fa-download"></i> Download
+              </a>
+            </div>
+          </div>
+
+          <div class="preview-panel">
+            <h4><i class="fa-solid fa-list-check"></i> Suggested contents</h4>
+            <ul id="modalPoints"></ul>
+          </div>
+        </div>
+
+        <div class="file-preview" id="filePreview">
+          <div>
+            <i class="fa-solid fa-file-lines" id="filePreviewIcon"></i>
+            <strong id="filePreviewType">PDF / Image / Excel Preview</strong>
+            <span>Upload your file at the given path, or replace the path with your Google Drive / direct file
+              link.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const templatesData = {
+      muCircular: {
+        title: "University of Mumbai Circular Formats",
+        kicker: "Official Circulars",
+        description: "Reference library for University of Mumbai circulars related to admission, eligibility, examination, academic schedule and institutional communication.",
+        file: "assets/templates/university-of-mumbai-circular-formats.pdf",
+        type: "PDF / Image",
+        icon: "fa-solid fa-building-columns",
+        points: ["Admission-related circulars", "Eligibility and enrollment references", "Exam and result notices", "Academic calendar references", "Important compliance formats"]
+      },
+      hted: {
+        title: "HTED Notification",
+        kicker: "Government Notifications",
+        description: "Higher Technical Education Department notification resource section for important government-level academic and institutional references.",
+        file: "assets/templates/hted-notification.pdf",
+        type: "PDF / Image",
+        icon: "fa-solid fa-landmark",
+        points: ["Government notification copies", "Policy references", "Higher education instructions", "Institutional compliance notes", "Department-wise reference folder"]
+      },
+      stateBoard: {
+        title: "Maharashtra State Board Circulars",
+        kicker: "Board Circulars",
+        description: "Circular format references for private institutions, school sections, junior college sections and state board communication.",
+        file: "assets/templates/maharashtra-state-board-circular-private-institution.pdf",
+        type: "PDF / Image",
+        icon: "fa-solid fa-school",
+        points: ["Private institution circulars", "Board instructions", "School and junior college references", "Academic notices", "Administrative records"]
+      },
+      sfc: {
+        title: "Self Finance Course Circular",
+        kicker: "Self Finance Courses",
+        description: "Resource category for self-finance course circulars, permissions, approvals, continuation references and academic documentation.",
+        file: "assets/templates/self-finance-course-circular.pdf",
+        type: "PDF / Image",
+        icon: "fa-solid fa-file-circle-check",
+        points: ["Course approval circulars", "Fee-related references", "Continuation documents", "Permission letters", "Course-wise academic records"]
+      },
+      notice: {
+        title: "Notice Templates",
+        kicker: "College Notices",
+        description: "Ready notice templates for daily college communication, including holidays, admissions, document submission, exams and discipline instructions.",
+        file: "assets/templates/notice-templates.pdf",
+        type: "PDF / Image",
+        icon: "fa-solid fa-bullhorn",
+        points: ["Holiday notice", "Admission notice", "Document submission notice", "Exam form notice", "Student instruction notice"]
+      },
+      collegeExcel: {
+        title: "College Level Excel",
+        kicker: "Institution Excel",
+        description: "General Excel format collection for college-level reporting, student management, departmental records and academic administration.",
+        file: "assets/templates/college-level-excel.xlsx",
+        type: "Excel / PDF",
+        icon: "fa-solid fa-table-cells-large",
+        points: ["Department record sheet", "Admission summary", "Fee summary", "Result tracker", "Management report format"]
+      },
+      studentExcel: {
+        title: "Student Details Excel",
+        kicker: "Must-Have Student Records",
+        description: "A must-have institutional Excel format for maintaining student data, documents, category, contact and academic details in one master file.",
+        file: "assets/templates/student-details-excel.xlsx",
+        type: "Excel",
+        icon: "fa-solid fa-address-card",
+        points: ["Student name and roll number", "Mobile and parent contact", "Category and caste details", "Document submission status", "Admission and eligibility status"]
+      },
+      inwardOutward: {
+        title: "Inward / Outward Excel",
+        kicker: "Office Register",
+        description: "Office register Excel format for tracking inward letters, outward letters, dispatch numbers, received documents and communication records.",
+        file: "assets/templates/inward-outward-register.xlsx",
+        type: "Excel",
+        icon: "fa-solid fa-right-left",
+        points: ["Inward number", "Outward number", "Date of receipt", "Sender / receiver details", "Document subject and remarks"]
+      },
+      lc: {
+        title: "LC Application Templates",
+        kicker: "Leaving Certificate",
+        description: "Leaving Certificate and Transfer Certificate application templates for students, office submission and institutional records.",
+        file: "assets/templates/lc-application-templates.pdf",
+        type: "PDF / Image",
+        icon: "fa-solid fa-file-signature",
+        points: ["Student request format", "Reason for LC", "Document checklist", "Office verification section", "Parent / student declaration"]
+      },
+      bonafide: {
+        title: "Bonafide Application Templates",
+        kicker: "Certificate Request",
+        description: "Bonafide application formats for scholarship, bank, travel, passport, education loan and academic certificate purposes.",
+        file: "assets/templates/bonafide-application-templates.pdf",
+        type: "PDF / Image",
+        icon: "fa-solid fa-id-badge",
+        points: ["Student details", "Purpose of bonafide", "Course and class details", "Office use section", "Principal / authorized signature space"]
+      },
+      fees: {
+        title: "Fee Structure Templates",
+        kicker: "Finance Formats",
+        description: "Course-wise and semester-wise fee structure templates for admission desk, student communication and management records.",
+        file: "assets/templates/fee-structure-templates.xlsx",
+        type: "PDF / Excel",
+        icon: "fa-solid fa-indian-rupee-sign",
+        points: ["Course name", "Tuition fee", "Exam fee", "Eligibility / enrollment fee", "Total and installment structure"]
+      }
+    };
+
+    const brandBar = document.getElementById("brandBar");
+    const progressBar = document.getElementById("progressBar");
+    const cursorGlow = document.getElementById("cursorGlow");
+    const templateSearch = document.getElementById("templateSearch");
+    const chips = document.querySelectorAll(".chip");
+    const templateCards = document.querySelectorAll(".template-card");
+    const emptyState = document.getElementById("emptyState");
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    function updateScrollUI() {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = progress + "%";
+      brandBar.classList.toggle("scrolled", scrollTop > 24);
+    }
+
+    window.addEventListener("scroll", updateScrollUI);
+    updateScrollUI();
+
+    window.addEventListener("mousemove", (event) => {
+      cursorGlow.style.opacity = "1";
+      cursorGlow.style.left = event.clientX + "px";
+      cursorGlow.style.top = event.clientY + "px";
+    });
+
+    document.querySelectorAll(".surface").forEach((card) => {
+      card.addEventListener("mousemove", (event) => {
+        const rect = card.getBoundingClientRect();
+        card.style.setProperty("--x", event.clientX - rect.left + "px");
+        card.style.setProperty("--y", event.clientY - rect.top + "px");
+      });
+    });
+
+    document.querySelectorAll(".btn").forEach((button) => {
+      button.addEventListener("click", () => {
+        button.classList.remove("ripple");
+        void button.offsetWidth;
+        button.classList.add("ripple");
+      });
+    });
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
+
+    let activeFilter = "all";
+
+    function filterTemplates() {
+      const searchTerm = templateSearch.value.toLowerCase().trim();
+      let visibleCount = 0;
+
+      templateCards.forEach((card) => {
+        const category = card.dataset.category;
+        const keywords = card.dataset.keywords.toLowerCase();
+        const title = card.querySelector("h4").textContent.toLowerCase();
+
+        const matchesFilter = activeFilter === "all" || category === activeFilter;
+        const matchesSearch = !searchTerm || title.includes(searchTerm) || keywords.includes(searchTerm);
+
+        if (matchesFilter && matchesSearch) {
+          card.style.display = "flex";
+          visibleCount++;
+        } else {
+          card.style.display = "none";
+        }
+      });
+
+      emptyState.classList.toggle("show", visibleCount === 0);
+    }
+
+    chips.forEach((chip) => {
+      chip.addEventListener("click", () => {
+        chips.forEach((item) => item.classList.remove("active"));
+        chip.classList.add("active");
+        activeFilter = chip.dataset.filter;
+        filterTemplates();
+      });
+    });
+
+    templateSearch.addEventListener("input", filterTemplates);
+
+    function openPreview(key) {
+      const item = templatesData[key];
+      if (!item) return;
+
+      document.getElementById("modalKicker").textContent = item.kicker;
+      document.getElementById("modalTitle").textContent = item.title;
+      document.getElementById("modalDescription").textContent = item.description;
+      document.getElementById("modalViewLink").href = item.file;
+      document.getElementById("modalDownloadLink").href = item.file;
+      document.getElementById("filePreviewIcon").className = item.icon;
+      document.getElementById("filePreviewType").textContent = item.type + " Resource";
+
+      const pointsList = document.getElementById("modalPoints");
+      pointsList.innerHTML = "";
+
+      item.points.forEach((point) => {
+        const li = document.createElement("li");
+        li.textContent = point;
+        pointsList.appendChild(li);
+      });
+
+      document.getElementById("previewModal").classList.add("show");
+      document.body.classList.add("modal-open");
+    }
+
+    function closePreview() {
+      document.getElementById("previewModal").classList.remove("show");
+      document.body.classList.remove("modal-open");
+    }
+
+    document.getElementById("previewModal").addEventListener("click", (event) => {
+      if (event.target.id === "previewModal") {
+        closePreview();
+      }
+    });
+
+    window.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closePreview();
+      }
+    });
+
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+function closeMobileMenu() {
+  if (!menuToggle || !navLinks) return;
+
+  navLinks.classList.remove("open");
+  document.body.classList.remove("menu-open");
+  menuToggle.setAttribute("aria-expanded", "false");
+  menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+}
+
+if (menuToggle && navLinks) {
+  menuToggle.addEventListener("click", () => {
+    const isOpen = navLinks.classList.toggle("open");
+
+    document.body.classList.toggle("menu-open", isOpen);
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+
+    menuToggle.innerHTML = isOpen
+      ? '<i class="fa-solid fa-xmark"></i>'
+      : '<i class="fa-solid fa-bars"></i>';
+  });
+
+  navLinks.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", closeMobileMenu);
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 980) {
+      closeMobileMenu();
+    }
+  });
+}
+
+  </script>
+</body>
+
+</html>
