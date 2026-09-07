@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="LearnWithNaofil - Notifications: College notices, admin circulars, university updates, notes, files and more." />
+  <meta name="theme-color" content="#f5efe6" />
+  <title>Notifications | LearnWithNaofil</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #f5efe6;
+      --bg-2: #fffaf2;
+      --ink: #151515;
+      --ink-soft: #3b3b3b;
+      --muted: #6f6a61;
+      --paper: rgba(255, 255, 255, 0.74);
+      --paper-solid: #fffdf8;
+      --border: rgba(21, 21, 21, 0.10);
+      --border-strong: rgba(21, 21, 21, 0.18);
+      --dark: #111827;
+      --dark-2: #1f2937;
+      --cream: #f8efe2;
+      --gold: #b98239;
+      --gold-2: #e3bd7c;
+      --teal: #1f8a8a;
+      --blue: #2563eb;
+      --rose: #c96b5c;
+      --shadow: 0 26px 80px rgba(30, 24, 16, 0.12);
+      --shadow-soft: 0 16px 48px rgba(30, 24, 16, 0.08);
+      --radius: 28px;
+      --radius-sm: 18px;
+      --max: 1180px;
+      --nav-h: 78px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: 'Inter', sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 0%, rgba(227, 189, 124, 0.22), transparent 34%),
+        radial-gradient(circle at 90% 12%, rgba(31, 138, 138, 0.12), transparent 32%),
+        linear-gradient(135deg, var(--bg), var(--bg-2));
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    ::selection {
+      background: rgba(185, 130, 57, 0.25);
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 18px;
+      top: -70px;
+      z-index: 5000;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: var(--ink);
+      color: #fff;
+      text-decoration: none;
+      transition: 0.25s ease;
+    }
+
+    .skip-link:focus {
+      top: 18px;
+    }
+
+    .container {
+      width: min(92%, var(--max));
+      margin-inline: auto;
+    }
+
+    section {
+      position: relative;
+      padding: 96px 0;
+    }
+
+    .section-head {
+      max-width: 780px;
+      margin: 0 auto 54px;
+      text-align: center;
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 14px;
+      padding: 8px 13px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.52);
+      color: var(--gold);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+    }
+
+    .kicker::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 0 5px rgba(185, 130, 57, 0.13);
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.15rem, 4.8vw, 4rem);
+      line-height: 1.04;
+      letter-spacing: -0.04em;
+      color: var(--ink);
+    }
+
+    .section-subtitle {
+      margin: 16px auto 0;
+      color: var(--muted);
+      font-size: 1.02rem;
+      line-height: 1.8;
+    }
+
+    .text-gradient {
+      background: linear-gradient(90deg, var(--gold), var(--teal));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 3000;
+      border-bottom: 1px solid transparent;
+      transition: 0.28s ease;
+    }
+
+    .navbar.scrolled {
+      background: rgba(255, 250, 242, 0.82);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom-color: var(--border);
+      box-shadow: 0 12px 32px rgba(30, 24, 16, 0.07);
+    }
+
+    .nav-content {
+      height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .logo-mark {
+      position: relative;
+      width: 48px;
+      height: 48px;
+      border-radius: 17px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: linear-gradient(135deg, var(--ink), #3a2b1f 54%, var(--gold));
+      box-shadow: 0 14px 30px rgba(21, 21, 21, 0.16);
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      overflow: hidden;
+    }
+
+    .logo-mark::after {
+      content: "";
+      position: absolute;
+      inset: -40% auto auto -40%;
+      width: 60%;
+      height: 160%;
+      background: rgba(255, 255, 255, 0.28);
+      transform: rotate(28deg);
+      animation: shine 6s ease-in-out infinite;
+    }
+
+    @keyframes shine {
+      0%, 55% {
+        transform: translateX(-120%) rotate(28deg);
+      }
+      75%, 100% {
+        transform: translateX(430%) rotate(28deg);
+      }
+    }
+
+    .logo-text strong {
+      display: block;
+      color: var(--ink);
+      font-size: 1.02rem;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+    }
+
+    .logo-text span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 0.74rem;
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      list-style: none;
+      padding: 6px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.48);
+      box-shadow: 0 12px 36px rgba(30, 24, 16, 0.05);
+    }
+
+    .nav-links a {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 38px;
+      padding: 0 13px;
+      border-radius: 999px;
+      text-decoration: none;
+      color: var(--ink-soft);
+      font-size: 0.9rem;
+      font-weight: 700;
+      transition: 0.22s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #fff;
+      background: var(--ink);
+    }
+
+    .nav-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      min-height: 44px;
+      padding: 0 16px;
+      border-radius: 999px;
+      background: var(--ink);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 800;
+      box-shadow: 0 16px 34px rgba(21, 21, 21, 0.16);
+      transition: 0.25s ease;
+    }
+
+    .nav-action:hover {
+      transform: translateY(-3px);
+      background: linear-gradient(135deg, var(--ink), var(--gold));
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 46px;
+      height: 46px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.56);
+      color: var(--ink);
+      cursor: pointer;
+      font-size: 1.12rem;
+    }
+
+    /* NOTIFICATIONS PAGE */
+    .page-section {
+      padding: 120px 0 80px;
+    }
+
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin: 16px 0 28px;
+    }
+
+    .filter-btn,
+    .search-input,
+    .batch-select {
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.7);
+      color: var(--ink-soft);
+      font-weight: 700;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--ink);
+      color: #fff;
+      border-color: var(--ink);
+    }
+
+    .search-input,
+    .batch-select {
+      outline: none;
+    }
+
+    .search-input:focus,
+    .batch-select:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 4px rgba(185, 130, 57, 0.15);
+    }
+
+    /* Layout: main + sidebar */
+    .notifications-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.9fr);
+      gap: 24px;
+      align-items: start;
+    }
+
+    .main-notices {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    .sidebar-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      letter-spacing: -0.03em;
+      margin-bottom: 14px;
+      color: var(--ink);
+    }
+
+    .all-notices-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    /* Notice Card */
+    .notice-card {
+      position: relative;
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      gap: 14px;
+      background: var(--paper);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 14px;
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      overflow: hidden;
+    }
+
+    .notice-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+      border-color: rgba(185, 130, 57, 0.35);
+    }
+
+    .notice-image-box {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      min-height: 160px;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: #eee;
+    }
+
+    .notice-image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .notice-content {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 4px 4px 4px 0;
+    }
+
+    .notice-badges {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.6);
+      color: var(--ink-soft);
+    }
+
+    .badge.fy {
+      background: rgba(37, 99, 235, 0.12);
+      color: #1d4ed8;
+      border-color: rgba(37, 99, 235, 0.25);
+    }
+
+    .badge.sy {
+      background: rgba(31, 138, 138, 0.12);
+      color: #0f6b6b;
+      border-color: rgba(31, 138, 138, 0.25);
+    }
+
+    .badge.ty {
+      background: rgba(185, 130, 57, 0.12);
+      color: #8a5b20;
+      border-color: rgba(185, 130, 57, 0.25);
+    }
+
+    .badge.all {
+      background: rgba(100, 100, 100, 0.12);
+      color: #444;
+      border-color: rgba(100, 100, 100, 0.25);
+    }
+
+    .badge.official {
+      background: rgba(201, 107, 92, 0.12);
+      color: #a64a3c;
+      border-color: rgba(201, 107, 92, 0.25);
+    }
+
+    .notice-title {
+      font-weight: 800;
+      font-size: 1.02rem;
+      line-height: 1.35;
+      letter-spacing: -0.02em;
+    }
+
+    .notice-desc {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .notice-meta {
+      display: grid;
+      gap: 6px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--ink-soft);
+    }
+
+    .notice-meta-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+    }
+
+    .notice-meta-item i {
+      color: var(--gold);
+      margin-top: 2px;
+    }
+
+    .notice-link-btn {
+      margin-top: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 12px;
+      background: var(--ink);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 0.85rem;
+      transition: 0.2s ease;
+    }
+
+    .notice-link-btn:hover {
+      background: linear-gradient(135deg, var(--ink), var(--gold));
+    }
+
+    /* Hover overlay for all notices (right side too) */
+    .notice-link-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(21, 21, 21, 0.78);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 0.95rem;
+      gap: 8px;
+      z-index: 2;
+    }
+
+    .notice-card:hover .notice-link-overlay {
+      opacity: 1;
+    }
+
+    /* Sidebar mini card */
+    .mini-notice-card {
+      position: relative;
+      background: var(--paper);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 12px;
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      overflow: hidden;
+    }
+
+    .mini-notice-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+      border-color: rgba(185, 130, 57, 0.35);
+    }
+
+    .mini-notice-title {
+      font-weight: 800;
+      font-size: 0.9rem;
+      line-height: 1.35;
+      margin-bottom: 4px;
+    }
+
+    .mini-notice-meta {
+      font-size: 0.75rem;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    .no-results {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 28px;
+      color: var(--muted);
+    }
+
+    /* Footer */
+    .footer {
+      padding: 30px 0;
+      border-top: 1px solid var(--border);
+      background: rgba(255, 250, 242, 0.55);
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .footer-content a {
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 1060px) {
+      .menu-toggle {
+        display: grid;
+        place-items: center;
+      }
+
+      .nav-action {
+        display: none;
+      }
+
+      .nav-links {
+        position: fixed;
+        inset: var(--nav-h) 0 auto 0;
+        min-height: calc(100vh - var(--nav-h));
+        border-radius: 0;
+        border-inline: 0;
+        border-bottom: 0;
+        background: rgba(255, 250, 242, 0.97);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+        box-shadow: none;
+        padding: 22px;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        transform: translateX(100%);
+        transition: 0.3s ease;
+      }
+
+      .nav-links.open {
+        transform: translateX(0);
+      }
+
+      .nav-links a {
+        height: 54px;
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.62);
+      }
+
+      .notifications-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .notice-card {
+        grid-template-columns: 1fr;
+      }
+
+      .notice-image-box {
+        min-height: 180px;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .page-section {
+        padding: 100px 0 60px;
+      }
+
+      .filter-bar {
+        flex-direction: column;
+      }
+
+      .search-input,
+      .batch-select {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar" aria-label="Main navigation">
+    <div class="container nav-content">
+      <a href="index.html" class="logo-area" aria-label="LearnWithNaofil Home">
+        <div class="logo-mark">LN</div>
+        <div class="logo-text">
+          <strong>LearnWithNaofil</strong>
+          <span>IT Educator • Digital Mentor</span>
+        </div>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="index.html#about" class="nav-link">About</a></li>
+        <li><a href="index.html#teaching" class="nav-link">Teaching</a></li>
+        <li><a href="index.html#achievements" class="nav-link">Achievements</a></li>
+        <li><a href="index.html#skills" class="nav-link">Skills</a></li>
+        <li><a href="index.html#resources" class="nav-link">Resources</a></li>
+        
+        <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+<li><a href="notifications.html" class="nav-link active">Notifications</a></li>
+      </ul>
+
+      <a href="index.html#contact" class="nav-action magnetic">
+        <i class="fa-solid fa-paper-plane"></i> Connect
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main id="main">
+    <section class="page-section" id="notifications-main">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="kicker">Notifications</div>
+          <h2 class="section-title">
+            Official <span class="text-gradient">Notice Board</span>
+          </h2>
+          <p class="section-subtitle">
+            FY / SY / TY and University notices with letterheads, dates, deadlines and direct links.
+          </p>
+        </div>
+
+        <!-- Filter + Search Bar -->
+        <div class="filter-bar reveal">
+          <button class="filter-btn active" data-batch="ALL">All Batches</button>
+          <button class="filter-btn" data-batch="FY">FY</button>
+          <button class="filter-btn" data-batch="SY">SY</button>
+          <button class="filter-btn" data-batch="TY">TY</button>
+          <button class="filter-btn" data-batch="ALL">All</button>
+
+          <input
+            type="text"
+            class="search-input"
+            id="searchInput"
+            placeholder="Search notices..."
+            aria-label="Search notices"
+          />
+        </div>
+
+        <!-- Layout: Main Notices + Sidebar -->
+        <div class="notifications-layout reveal">
+          <!-- Main Notices -->
+          <div class="main-notices" id="mainNoticesList">
+            <!-- JS will populate this -->
+          </div>
+
+          <!-- Sidebar: All Notices -->
+          <aside>
+            <h3 class="sidebar-title">All Notices</h3>
+            <div class="all-notices-list" id="allNoticesList">
+              <!-- JS will populate this -->
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>© 2026 LearnWithNaofil. All Rights Reserved.</p>
+      <p>Built with clarity, teaching value and modern digital identity.</p>
+    </div>
+  </footer>
+
+  <!-- Notifications logic (all in one file) -->
+  <script>
+    // ===========================
+    // EDIT THIS ARRAY TO CHANGE NOTICES
+    // Replace image URLs with your own letterhead images.
+    // ===========================
+
+    const noticesData = [
+      {
+        id: 1,
+        title: "FY – DBMS Assignment Submission",
+        description:
+          "Submit your DBMS assignment on or before the deadline. Report to HoD.",
+        batch: "FY",
+        noticeDate: "2026-09-07",
+        deadline: "2026-09-15",
+        submitTo: "Head of Department – Naofil Sir",
+        linkUrl: "https://drive.google.com/file/d/1vnVgnVpW6oopjnnw2zPk0bzpg7PQKHbW/view?usp=sharing",
+        imageUrl: "./FY.png",
+        official: true
+      },
+      {
+        id: 2,
+        title: "SY – OS Assignment Submission",
+        description:
+          "Operating Systems assignment must be submitted in the prescribed format.",
+        batch: "SY",
+        noticeDate: "2026-08-17",
+        deadline: "2026-09-10",
+        submitTo: "Head of Department – Naofil Sir",
+        linkUrl: "https://example.com/sy-os-assignment",
+        imageUrl: "https://placehold.co/600x800/f3f3f3/151515?text=SY+OS+Notice",
+        official: true
+      },
+      {
+        id: 3,
+        title: "TY – Examination Form Submission",
+        description:
+          "All TY students must fill and submit their examination forms online.",
+        batch: "TY",
+        noticeDate: "2026-09-01",
+        deadline: "2026-09-25",
+        submitTo: "Degree Admin Office",
+        linkUrl: "https://example.com/ty-exam-form",
+        imageUrl: "https://placehold.co/600x800/f3f3f3/151515?text=TY+Exam+Form",
+        official: true
+      },
+      {
+        id: 4,
+        title: "B.Sc. IT – Freshers’ Party Proposal",
+        description:
+          "FY, SY and TY students are invited to submit proposals and ideas for the Freshers’ Party.",
+        batch: "ALL",
+        noticeDate: "2026-09-05",
+        deadline: "2026-09-20",
+        submitTo: "IT Department Committee",
+        linkUrl: "https://example.com/freshers-proposal",
+        imageUrl: "https://placehold.co/600x800/f3f3f3/151515?text=Freshers+Party",
+        official: false
+      },
+      {
+        id: 5,
+        title: "SY – Submission of Form D3",
+        description:
+          "All SY students must submit Form D3 for internal records and verification.",
+        batch: "SY",
+        noticeDate: "2026-09-07",
+        deadline: "2026-09-15",
+        submitTo: "Administrative Office",
+        linkUrl: "https://example.com/sy-form-d3",
+        imageUrl: "https://placehold.co/600x800/f3f3f3/151515?text=SY+Form+D3",
+        official: true
+      },
+      {
+        id: 6,
+        title: "University Circular – 25% Fee Increase",
+        description:
+          "University has issued a circular regarding 25% increase in tuition fees.",
+        batch: "ALL",
+        noticeDate: "2026-08-30",
+        deadline: null,
+        submitTo: "All Students & Parents",
+        linkUrl: "https://example.com/university-fee-circular",
+        imageUrl: "./FY.png",
+        official: true
+      }
+    ];
+
+    // ===========================
+    // RENDER LOGIC
+    // ===========================
+
+    const mainNoticesList = document.getElementById("mainNoticesList");
+    const allNoticesList = document.getElementById("allNoticesList");
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const searchInput = document.getElementById("searchInput");
+
+    let currentBatch = "ALL";
+    let searchQuery = "";
+
+    function formatDate(dateStr) {
+      if (!dateStr) return "";
+      const d = new Date(dateStr);
+      return d.toLocaleDateString(undefined, {
+        day: "2-digit",
+        month: "short",
+        year: "numeric"
+      });
+    }
+
+    function getBatchClass(batch) {
+      if (batch === "FY") return "fy";
+      if (batch === "SY") return "sy";
+      if (batch === "TY") return "ty";
+      if (batch === "ALL") return "all";
+      return "all";
+    }
+
+    function escapeHtml(str) {
+      return String(str)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+    }
+
+    function getFilteredData() {
+      let data = noticesData;
+
+      if (currentBatch !== "ALL") {
+        data = data.filter(n => n.batch === currentBatch || n.batch === "ALL");
+      }
+
+      if (searchQuery.trim() !== "") {
+        const q = searchQuery.toLowerCase();
+        data = data.filter(n =>
+          n.title.toLowerCase().includes(q) ||
+          n.description.toLowerCase().includes(q) ||
+          n.batch.toLowerCase().includes(q)
+        );
+      }
+
+      return data;
+    }
+
+    function createMainNoticeCard(n) {
+      const card = document.createElement("article");
+      card.className = "notice-card";
+
+      const deadlineHtml = n.deadline
+        ? `<div class="notice-meta-item">
+             <i class="fa-solid fa-calendar-check"></i>
+             <div>
+               <div>Deadline</div>
+               <div>${formatDate(n.deadline)}</div>
+             </div>
+           </div>`
+        : "";
+
+      const officialBadge = n.official
+        ? `<span class="badge official">Official</span>`
+        : "";
+
+      card.innerHTML = `
+        <div class="notice-image-box">
+          <img src="${escapeHtml(n.imageUrl)}" alt="${escapeHtml(n.title)} notice image" loading="lazy" />
+        </div>
+
+        <div class="notice-content">
+          <div class="notice-badges">
+            <span class="badge ${getBatchClass(n.batch)}">${escapeHtml(n.batch)}</span>
+            ${officialBadge}
+          </div>
+
+          <h3 class="notice-title">${escapeHtml(n.title)}</h3>
+          <p class="notice-desc">${escapeHtml(n.description)}</p>
+
+          <div class="notice-meta">
+            <div class="notice-meta-item">
+              <i class="fa-solid fa-calendar"></i>
+              <div>
+                <div>Notice Date</div>
+                <div>${formatDate(n.noticeDate)}</div>
+              </div>
+            </div>
+            ${deadlineHtml}
+            <div class="notice-meta-item">
+              <i class="fa-solid fa-user-tie"></i>
+              <div>
+                <div>Submit / Report To</div>
+                <div>${escapeHtml(n.submitTo)}</div>
+              </div>
+            </div>
+          </div>
+
+          <a class="notice-link-btn" href="${escapeHtml(n.linkUrl)}" target="_blank" rel="noopener">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            Open Notice Link
+          </a>
+        </div>
+
+        <a href="${escapeHtml(n.linkUrl)}" target="_blank" rel="noopener" class="notice-link-overlay">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          Open Notice
+        </a>
+      `;
+
+      return card;
+    }
+
+    function createMiniNoticeCard(n) {
+      const card = document.createElement("article");
+      card.className = "mini-notice-card";
+
+      const deadlineText = n.deadline ? ` • Deadline: ${formatDate(n.deadline)}` : "";
+
+      card.innerHTML = `
+        <div class="mini-notice-title">${escapeHtml(n.title)}</div>
+        <div class="mini-notice-meta">
+          ${escapeHtml(n.batch)} • Notice: ${formatDate(n.noticeDate)}${deadlineText}
+        </div>
+        <a href="${escapeHtml(n.linkUrl)}" target="_blank" rel="noopener" class="notice-link-overlay">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          Open
+        </a>
+      `;
+
+      return card;
+    }
+
+    function renderNotices() {
+      const data = getFilteredData();
+      mainNoticesList.innerHTML = "";
+      allNoticesList.innerHTML = "";
+
+      if (!data.length) {
+        mainNoticesList.innerHTML = `
+          <div class="no-results">
+            No matching notices found.
+          </div>
+        `;
+        return;
+      }
+
+      // Main notices (large cards)
+      data.forEach(n => {
+        const card = createMainNoticeCard(n);
+        mainNoticesList.appendChild(card);
+      });
+
+      // Sidebar: all notices (mini cards, same hover effect)
+      noticesData.forEach(n => {
+        const card = createMiniNoticeCard(n);
+        allNoticesList.appendChild(card);
+      });
+    }
+
+    // Batch filter buttons
+    filterButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        filterButtons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        currentBatch = btn.dataset.batch;
+        renderNotices();
+      });
+    });
+
+    // Search
+    searchInput.addEventListener("input", () => {
+      searchQuery = searchInput.value;
+      renderNotices();
+    });
+
+    // Initial render
+    renderNotices();
+  </script>
+
+  <!-- Navbar behavior (same as index.html) -->
+  <script>
+    const navbar = document.getElementById('navbar');
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    function closeMenu() {
+      navLinks.classList.remove('open');
+      document.body.classList.remove('menu-open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+    }
+
+    menuToggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      document.body.classList.toggle('menu-open', open);
+      menuToggle.setAttribute('aria-expanded', String(open));
+      menuToggle.innerHTML = open ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 920) closeMenu();
+    });
+
+    function updateNavbar() {
+      navbar.classList.toggle('scrolled', window.scrollY > 35);
+    }
+    window.addEventListener('scroll', updateNavbar);
+    updateNavbar();
+  </script>
+</body>
+</html>
