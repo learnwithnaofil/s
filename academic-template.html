@@ -1450,183 +1450,465 @@
       </button>
     </div>
   </nav>
-  <header class="hero">
-    <span class="hero-blob one" aria-hidden="true"></span>
-    <span class="hero-blob two" aria-hidden="true"></span>
 
-    <div class="container hero-grid">
-      <div class="reveal">
-        <div class="eyebrow">
-          <i class="fa-solid fa-sparkles"></i>
-          Academic Documentation Hub
+<header class="hero">
+  <span class="hero-blob one" aria-hidden="true"></span>
+  <span class="hero-blob two" aria-hidden="true"></span>
+
+  <div class="container hero-grid">
+    <div class="reveal">
+      <div class="eyebrow">
+        <i class="fa-solid fa-graduation-cap"></i>
+        Practical Journal & Document Hub
+      </div>
+
+      <h1>Your academic documents, <span class="soft">professionally</span> prepared.</h1>
+
+      <p class="hero-desc">
+        A dedicated academic document library featuring practical
+        journal certificates, cover pages, field project
+        acknowledgments, declaration pages and assignment formats.
+        Access standardised PDF templates for your academic work.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#templates" class="btn btn-primary">
+          <i class="fa-solid fa-folder-open"></i>
+          Explore Documents
+        </a>
+
+        <a href="#starterKit" class="btn btn-outline">
+          <i class="fa-solid fa-book-open"></i>
+          Student Guide
+        </a>
+      </div>
+    </div>
+
+    <aside class="dashboard surface reveal delay-1"
+      aria-label="Academic document library dashboard">
+
+      <div class="dashboard-inner">
+
+        <div class="dash-pills">
+          <span class="dash-pill">
+            <i class="fa-solid fa-building-columns"></i>
+            Academic Ready
+          </span>
+
+          <span class="dash-pill">
+            <i class="fa-solid fa-file-pdf"></i>
+            PDF Documents
+          </span>
         </div>
 
-        <h1>Institution files made <span class="soft">organized</span> and ready.</h1>
+        <h2 class="dash-title">
+          Your academic documents, all in one place.
+        </h2>
 
-        <p class="hero-desc">
-          A premium academic template library for circulars, notifications, college formats, Excel records, applications
-          and institutional documentation. Every resource can be connected with PDF, image or Excel files for view and
-          download.
+        <p class="dash-sub">
+          Access essential academic formats designed to make
+          practical journals, field projects and assignments
+          organised and professional.
         </p>
 
-        <div class="hero-buttons">
-          <a href="#templates" class="btn btn-primary">
-            <i class="fa-solid fa-folder-tree"></i>
-            Explore Templates
-          </a>
+        <div class="mini-stats">
 
-          <a href="#starterKit" class="btn btn-outline">
-            <i class="fa-solid fa-list-check"></i>
-            Starter Kit
-          </a>
+          <div class="mini-stat">
+            <strong>05</strong>
+            <span>Document Templates</span>
+          </div>
+
+          <div class="mini-stat">
+            <strong>01</strong>
+            <span>File Format</span>
+          </div>
+
+          <div class="mini-stat">
+            <strong>01</strong>
+            <span>Document Library</span>
+          </div>
+
+        </div>
+
+        <div class="quote-strip">
+          Student-friendly academic templates:
+          Preview, download and prepare your documents
+          without searching through multiple folders.
+        </div>
+
+      </div>
+    </aside>
+  </div>
+</header>
+
+
+<main>
+  <section class="templates-section" id="templates">
+
+    <div class="container">
+
+      <div class="section-head reveal">
+
+        <div class="kicker">Academic Document Library</div>
+
+        <h2 class="section-title">
+          Essential academic documents in
+          <span class="text-gradient">ready-to-use PDF formats.</span>
+        </h2>
+
+        <p class="section-subtitle">
+          Explore standardised templates for practical journals,
+          field projects, declarations and academic assignments.
+          Preview documents before downloading.
+        </p>
+
+      </div>
+
+      <!-- SEARCH AND FILTER TOOLBAR -->
+
+      <div class="toolbar reveal">
+
+        <label class="search-box" for="templateSearch">
+
+          <i class="fa-solid fa-magnifying-glass"></i>
+
+          <input
+            type="search"
+            id="templateSearch"
+            placeholder="Search practical journal, certificate, project, declaration..."
+            autocomplete="off"
+          />
+
+        </label>
+
+        <div class="chips" aria-label="Filter documents">
+
+          <button class="chip active" data-filter="all">
+            All Documents
+          </button>
+
+          <button class="chip" data-filter="journal">
+            Practical Journal
+          </button>
+
+          <button class="chip" data-filter="project">
+            Field Project
+          </button>
+
+          <button class="chip" data-filter="declaration">
+            Declaration
+          </button>
+
+          <button class="chip" data-filter="assignment">
+            Assignment
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- DOCUMENT LIBRARY -->
+
+      <div class="category-block reveal">
+
+        <div class="block-title">
+
+          <h3>Practical Journals & Academic Formats</h3>
+
+          <p>
+            Download essential academic document formats
+            for practical journal preparation, project submissions
+            and assignments.
+          </p>
+
+        </div>
+
+
+        <div class="templates-grid">
+
+
+          <!-- 01. PRACTICAL JOURNAL CERTIFICATE -->
+
+          <article class="surface template-card"
+            data-category="journal"
+            data-keywords="practical journal certificate certificate page journal certification student subject semester college university">
+
+            <div class="template-top">
+
+              <div class="template-icon">
+                <i class="fa-solid fa-award"></i>
+              </div>
+
+              <span class="type-badge">PDF</span>
+
+            </div>
+
+            <h4>Practical Journal Certificate Page</h4>
+
+            <p>
+              A standard certificate page for practical journals,
+              including student details, subject information
+              and faculty verification.
+            </p>
+
+            <div class="mini-tags">
+              <span>Practical</span>
+              <span>Certificate</span>
+              <span>Journal</span>
+            </div>
+
+            <div class="template-actions">
+
+              <button class="btn btn-primary"
+                onclick="openPreview('journalCertificate')">
+
+                <i class="fa-solid fa-eye"></i>
+                View
+
+              </button>
+
+              <a class="btn btn-outline"
+                href="assets/templates/practical-journal-certificate.pdf"
+                download>
+
+                <i class="fa-solid fa-download"></i>
+                Download
+
+              </a>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- 02. PRACTICAL JOURNAL COVER PAGE -->
+
+          <article class="surface template-card"
+            data-category="journal"
+            data-keywords="practical journal cover page front page title page student name roll number course semester subject college">
+
+            <div class="template-top">
+
+              <div class="template-icon">
+                <i class="fa-solid fa-book-open"></i>
+              </div>
+
+              <span class="type-badge">PDF</span>
+
+            </div>
+
+            <h4>Practical Journal Cover Page</h4>
+
+            <p>
+              A professionally structured cover page for practical
+              journals with student details, academic year,
+              course, semester and subject information.
+            </p>
+
+            <div class="mini-tags">
+              <span>Journal</span>
+              <span>Cover Page</span>
+              <span>Student</span>
+            </div>
+
+            <div class="template-actions">
+
+              <button class="btn btn-primary"
+                onclick="openPreview('journalCover')">
+
+                <i class="fa-solid fa-eye"></i>
+                View
+
+              </button>
+
+              <a class="btn btn-outline"
+                href="assets/templates/practical-journal-cover-page.pdf"
+                download>
+
+                <i class="fa-solid fa-download"></i>
+                Download
+
+              </a>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- 03. FIELD PROJECT ACKNOWLEDGMENT -->
+
+          <article class="surface template-card"
+            data-category="project"
+            data-keywords="field project acknowledgment acknowledgement page project report thanks appreciation guide mentor faculty student">
+
+            <div class="template-top">
+
+              <div class="template-icon">
+                <i class="fa-solid fa-handshake"></i>
+              </div>
+
+              <span class="type-badge">PDF</span>
+
+            </div>
+
+            <h4>Field Project Acknowledgment Page</h4>
+
+            <p>
+              A formal acknowledgment format for field project
+              reports to express gratitude towards project guides,
+              faculty members and supporting individuals.
+            </p>
+
+            <div class="mini-tags">
+              <span>Field Project</span>
+              <span>Acknowledgment</span>
+              <span>Report</span>
+            </div>
+
+            <div class="template-actions">
+
+              <button class="btn btn-primary"
+                onclick="openPreview('projectAcknowledgment')">
+
+                <i class="fa-solid fa-eye"></i>
+                View
+
+              </button>
+
+              <a class="btn btn-outline"
+                href="assets/templates/field-project-acknowledgment.pdf"
+                download>
+
+                <i class="fa-solid fa-download"></i>
+                Download
+
+              </a>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- 04. DECLARATION PAGE -->
+
+          <article class="surface template-card"
+            data-category="declaration"
+            data-keywords="declaration page student declaration originality statement project report practical journal academic honesty">
+
+            <div class="template-top">
+
+              <div class="template-icon">
+                <i class="fa-solid fa-file-circle-check"></i>
+              </div>
+
+              <span class="type-badge">PDF</span>
+
+            </div>
+
+            <h4>Declaration Page</h4>
+
+            <p>
+              A standard student declaration format confirming
+              the originality and authenticity of submitted
+              academic work and project reports.
+            </p>
+
+            <div class="mini-tags">
+              <span>Declaration</span>
+              <span>Originality</span>
+              <span>Academic</span>
+            </div>
+
+            <div class="template-actions">
+
+              <button class="btn btn-primary"
+                onclick="openPreview('declaration')">
+
+                <i class="fa-solid fa-eye"></i>
+                View
+
+              </button>
+
+              <a class="btn btn-outline"
+                href="assets/templates/declaration-page.pdf"
+                download>
+
+                <i class="fa-solid fa-download"></i>
+                Download
+
+              </a>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- 05. ASSIGNMENT PAGE -->
+
+          <article class="surface template-card"
+            data-category="assignment"
+            data-keywords="assignment page assignment submission answer writing academic format student name roll number subject date">
+
+            <div class="template-top">
+
+              <div class="template-icon">
+                <i class="fa-solid fa-clipboard-list"></i>
+              </div>
+
+              <span class="type-badge">PDF</span>
+
+            </div>
+
+            <h4>Assignment Page</h4>
+
+            <p>
+              A ready-to-use academic assignment format with
+              student identification, subject details, assignment
+              title and submission information.
+            </p>
+
+            <div class="mini-tags">
+              <span>Assignment</span>
+              <span>Submission</span>
+              <span>Academic</span>
+            </div>
+
+            <div class="template-actions">
+
+              <button class="btn btn-primary"
+                onclick="openPreview('assignment')">
+
+                <i class="fa-solid fa-eye"></i>
+                View
+
+              </button>
+
+              <a class="btn btn-outline"
+                href="assets/templates/assignment-page.pdf"
+                download>
+
+                <i class="fa-solid fa-download"></i>
+                Download
+
+              </a>
+
+            </div>
+
+          </article>
+
+
         </div>
       </div>
 
-      <aside class="dashboard surface reveal delay-1" aria-label="Academic templates dashboard">
-        <div class="dashboard-inner">
-          <div class="dash-pills">
-            <span class="dash-pill"><i class="fa-solid fa-building-columns"></i> Institution Ready</span>
-            <span class="dash-pill"><i class="fa-solid fa-file-arrow-down"></i> View + Download</span>
-          </div>
-
-          <h2 class="dash-title">Your academic file room, redesigned.</h2>
-
-          <p class="dash-sub">
-            Keep important circulars, applications and Excel formats in one beautiful searchable system.
-          </p>
-
-          <div class="mini-stats">
-            <div class="mini-stat">
-              <strong>11</strong>
-              <span>Resource Cards</span>
-            </div>
-            <div class="mini-stat">
-              <strong>03</strong>
-              <span>File Types</span>
-            </div>
-            <div class="mini-stat">
-              <strong>01</strong>
-              <span>Smart Library</span>
-            </div>
-          </div>
-
-          <div class="quote-strip">
-            Unique feature: students and staff can filter by circular, Excel, application and fee formats instead of
-            searching folders manually.
-          </div>
-        </div>
-      </aside>
     </div>
-  </header>
+  </section>
 
-  <main>
-    <section class="templates-section" id="templates">
-      <div class="container">
-        <div class="section-head reveal">
-          <div class="kicker">Template Library</div>
-          <h2 class="section-title">Circulars, Excel formats and applications in <span class="text-gradient">compact
-              premium cards.</span></h2>
-          <p class="section-subtitle">
-            This page is arranged in smaller cards so large academic resources stay clean, fast and easy to scan.
-          </p>
-        </div>
 
-        <div class="toolbar reveal">
-          <label class="search-box" for="templateSearch">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="search" id="templateSearch"
-              placeholder="Search circular, Excel, application, fee, LC, bonafide..." autocomplete="off" />
-          </label>
-
-          <div class="chips" aria-label="Filter templates">
-            <button class="chip active" data-filter="all">All</button>
-            <button class="chip" data-filter="circular">Circulars</button>
-            <button class="chip" data-filter="notification">Notifications</button>
-            <button class="chip" data-filter="excel">Excel</button>
-            <button class="chip" data-filter="application">Applications</button>
-            <button class="chip" data-filter="finance">Fees</button>
-          </div>
-        </div>
-
-        <div class="category-block reveal">
-          <div class="block-title">
-            <h3>Official Circulars & Notifications</h3>
-            <p>Keep reference formats and official documentation categories in a structured resource library.</p>
-          </div>
-
-          <div class="templates-grid">
-            <article class="surface template-card" data-category="circular"
-              data-keywords="university of mumbai circular formats mu circular pdf image official academic ordinance exam admission">
-              <div class="template-top">
-                <div class="template-icon"><i class="fa-solid fa-building-columns"></i></div>
-                <span class="type-badge">PDF / Image</span>
-              </div>
-              <h4>University of Mumbai Circular Formats</h4>
-              <p>Important MU circular format references for admissions, exams, eligibility and academic communication.
-              </p>
-              <div class="mini-tags"><span>MU</span><span>Circular</span><span>Official</span></div>
-              <div class="template-actions">
-                <button class="btn btn-primary" onclick="openPreview('muCircular')"><i class="fa-solid fa-eye"></i>
-                  View</button>
-                <a class="btn btn-outline" href="assets/templates/university-of-mumbai-circular-formats.pdf" download><i
-                    class="fa-solid fa-download"></i> Download</a>
-              </div>
-            </article>
-
-            <article class="surface template-card" data-category="notification"
-              data-keywords="hted higher technical education department notification government maharashtra education notification pdf image">
-              <div class="template-top">
-                <div class="template-icon"><i class="fa-solid fa-landmark"></i></div>
-                <span class="type-badge">PDF / Image</span>
-              </div>
-              <h4>HTED Notification</h4>
-              <p>Higher Technical Education Department notification references for institutional academic records.</p>
-              <div class="mini-tags"><span>HTED</span><span>Govt</span><span>Notice</span></div>
-              <div class="template-actions">
-                <button class="btn btn-primary" onclick="openPreview('hted')"><i class="fa-solid fa-eye"></i>
-                  View</button>
-                <a class="btn btn-outline" href="assets/templates/hted-notification.pdf" download><i
-                    class="fa-solid fa-download"></i> Download</a>
-              </div>
-            </article>
-
-            <article class="surface template-card" data-category="circular"
-              data-keywords="maharashtra state board circular private institution school junior college circular notification pdf image">
-              <div class="template-top">
-                <div class="template-icon"><i class="fa-solid fa-school"></i></div>
-                <span class="type-badge">PDF / Image</span>
-              </div>
-              <h4>Maharashtra State Board Circulars</h4>
-              <p>Circular references for private institutions, schools, junior colleges and board-related documentation.
-              </p>
-              <div class="mini-tags"><span>Board</span><span>Private</span><span>Institution</span></div>
-              <div class="template-actions">
-                <button class="btn btn-primary" onclick="openPreview('stateBoard')"><i class="fa-solid fa-eye"></i>
-                  View</button>
-                <a class="btn btn-outline"
-                  href="assets/templates/maharashtra-state-board-circular-private-institution.pdf" download><i
-                    class="fa-solid fa-download"></i> Download</a>
-              </div>
-            </article>
-
-            <article class="surface template-card" data-category="circular"
-              data-keywords="self finance course circular unaided course sf course university circular fees approval academic permission pdf">
-              <div class="template-top">
-                <div class="template-icon"><i class="fa-solid fa-file-circle-check"></i></div>
-                <span class="type-badge">PDF / Image</span>
-              </div>
-              <h4>Self Finance Course Circular</h4>
-              <p>References for self-financed course documentation, approvals, permissions and academic notices.</p>
-              <div class="mini-tags"><span>SFC</span><span>Course</span><span>Approval</span></div>
-              <div class="template-actions">
-                <button class="btn btn-primary" onclick="openPreview('sfc')"><i class="fa-solid fa-eye"></i>
-                  View</button>
-                <a class="btn btn-outline" href="assets/templates/self-finance-course-circular.pdf" download><i
-                    class="fa-solid fa-download"></i> Download</a>
-              </div>
-            </article>
-          </div>
-        </div>
 
         <!-- ADMIN PROTECTED SECTION -->
         <div id="adminProtectedSection" style="display: none;">
